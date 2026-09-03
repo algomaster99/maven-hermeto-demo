@@ -1,7 +1,8 @@
 # Maven Hermetic Builds Demo
 
-Live demo for "Maven-Lockfile: Locking Down the JVM Supply Chain for
-Hermetic Builds". Shows the dynamic-resolution blind spot in native Maven
+Live demo for
+["Maven-Lockfile: Locking Down the JVM Supply Chain for Hermetic Builds"](https://osselceu2026.sched.com/event/2RadG).
+Shows the dynamic-resolution blind spot in native Maven
 tooling, then closes it with maven-lockfile + hermeto.
 
 Reference: https://chains.proj.kth.se/maven-hermetic-builds-blind-spot.html
