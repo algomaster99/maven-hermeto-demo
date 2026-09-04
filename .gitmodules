@@ -1,3 +1,4 @@
 [submodule "hermeto"]
 	path = vendor/hermeto
-	url = https://github.com/hermetoproject/hermeto.git
+	url = https://github.com/algomaster99/hermeto.git
+	branch = fix-user-agent
