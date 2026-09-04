@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Runs the hermeto CLI from the vendored submodule's venv (see
+# vendor/setup-hermeto.sh), so this demo doesn't need hermeto installed
+# system-wide or pulled in as a compiled binary.
+set -euo pipefail
+
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VENV="$HERE/../vendor/venv"
+
+if [ ! -x "$VENV/bin/hermeto" ]; then
+  echo "hermeto venv not found — run: git submodule update --init && ./vendor/setup-hermeto.sh" >&2
+  exit 1
+fi
+
+exec "$VENV/bin/hermeto" "$@"

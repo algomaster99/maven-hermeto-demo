@@ -1,0 +1,3 @@
+[submodule "hermeto"]
+	path = vendor/hermeto
+	url = https://github.com/hermetoproject/hermeto.git

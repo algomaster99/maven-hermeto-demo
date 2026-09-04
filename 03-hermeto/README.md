@@ -29,13 +29,28 @@ extension, so this command (like any `mvn` command in `01-project/`)
 needs network access to fetch it first if it isn't already cached in
 `~/.m2/repository`.
 
+## Getting hermeto
+
+Upstream doesn't publish a standalone binary, so hermeto is vendored as
+a git submodule (`vendor/hermeto`, pinned to a tagged release) with a
+local venv built from it. One-time setup after cloning:
+
+```sh
+git submodule update --init
+./vendor/setup-hermeto.sh
+```
+
+This gives you `./hermeto` in this directory — a wrapper that runs the
+CLI from `vendor/venv`, so you don't need hermeto installed
+system-wide.
+
 ## Run the prefetch
 
 Run this from `03-hermeto/` (this directory), so output stays isolated
 here:
 
 ```sh
-hermeto fetch-deps \
+./hermeto fetch-deps \
   --source ../01-project \
   --output ./output \
   '{"type": "x-maven", "path": "."}'
@@ -50,7 +65,7 @@ directory with `<offline>true</offline>`.
 ## Materialize the settings file and run fully offline
 
 ```sh
-hermeto inject-files --output ./output   # writes settings.xml
+./hermeto inject-files --output ./output   # writes settings.xml
 mvn -o -s ./output/settings.xml -f ../01-project/pom.xml test
 ```
 
