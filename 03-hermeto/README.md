@@ -65,9 +65,23 @@ directory with `<offline>true</offline>`.
 ## Materialize the settings file and run fully offline
 
 ```sh
-./hermeto inject-files --output ./output   # writes settings.xml
+./hermeto inject-files ./output   # writes settings.xml
 mvn -o -s ./output/settings.xml -f ../01-project/pom.xml test
 ```
+
+You may also get
+```
+❯ mvn -o -s ./output/settings.xml  -f ../01-project/pom.xml test
+[WARNING] The POM for io.github.chains-project:maven-lockfile:jar:5.18.3 is missing, no dependency information available
+[ERROR] Error executing Maven.
+[ERROR] Extension io.github.chains-project:maven-lockfile:5.18.3 or one of its dependencies could not be resolved: Plugin io.github.chains-project:maven-lockfile:5.18.3 or one of its dependencies could not be resolved:
+        Cannot access hermeto-local (file:///home/aman/Desktop/experiments/maven-hermetic-demo/03-hermeto/output/deps/maven) in offline mode and the artifact io.github.chains-project:maven-lockfile:jar:5.18.3 has not been downloaded from it before.
+
+[ERROR] Caused by: Plugin io.github.chains-project:maven-lockfile:5.18.3 or one of its dependencies could not be resolved:
+        Cannot access hermeto-local (file:///home/aman/Desktop/experiments/maven-hermetic-demo/03-hermeto/output/deps/maven) in offline mode and the artifact io.github.chains-project:maven-lockfile:jar:5.18.3 has not been downloaded from it before.
+```
+This happens because it a core extension for `01-project/`, so Maven needs to fetch it before it can even read the POM.
+However, it is not the dependency of the project itself hence we should remove it before running the above command. You can do this by removing the `maven-lockfile` extension from `01-project/.mvn/extensions.xml` file.
 
 ## Expected result: BUILD SUCCESS, test runs, zero network access
 
