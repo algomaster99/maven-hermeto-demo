@@ -10,7 +10,7 @@ prefetches + checksum-verifies every one of them up front.
 `../01-project/lockfile.json` was generated (from `01-project/`) with:
 
 ```sh
-mvn test io.github.chains-project:maven-lockfile:5.18.3:generate \
+mvn test io.github.chains-project:maven-lockfile:5.18.4:generate \
   -Dhermetic -DchecksumMode=local
 ```
 

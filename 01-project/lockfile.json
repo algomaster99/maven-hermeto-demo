@@ -8,7 +8,7 @@
     "version": "1",
     "relativePath": "pom.xml",
     "checksumAlgorithm": "SHA-256",
-    "checksum": "cc9de2b81830138814268be2c568b1ed5b9075e9e524be4060b1ed23f8fa2665"
+    "checksum": "117c263a9f12868b8c07267eb3da8436b10c32da4580478983579d837cbfb3b7"
   },
   "lockFileVersion": 1,
   "dependencies": [
@@ -418,10 +418,10 @@
     {
       "groupId": "io.github.chains-project",
       "artifactId": "maven-lockfile",
-      "version": "5.18.3",
-      "checksum": "db9171c4bd1753fdcf549d55b3787d64ce2bd8e180d0d6ec684e33e56a9dec64",
+      "version": "5.18.4",
+      "checksum": "13627878f2fcc924910deed6ac12f3f8b500f9ebd4d7c7938213a03f25b7e6fe",
       "checksumAlgorithm": "SHA-256",
-      "resolved": "https://repo.maven.apache.org/maven2/io/github/chains-project/maven-lockfile/5.18.3/maven-lockfile-5.18.3.jar",
+      "resolved": "https://repo.maven.apache.org/maven2/io/github/chains-project/maven-lockfile/5.18.4/maven-lockfile-5.18.4.jar",
       "repositoryId": "central",
       "dependencies": [
         {
