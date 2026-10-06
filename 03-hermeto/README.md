@@ -66,8 +66,11 @@ directory with `<offline>true</offline>`.
 
 ```sh
 ./hermeto inject-files ./output   # writes settings.xml
-mvn -o -s ./output/settings.xml -f ../01-project/pom.xml test
+mvn -o -s ./output/settings.xml -f ../01-project/pom.xml test -Dmaven.test.skip=false
 ```
+
+`-Dmaven.test.skip=false` is required: hermeto's generated `settings.xml`
+has an active-by-default profile setting `maven.test.skip=true`.
 
 You may also get
 ```
