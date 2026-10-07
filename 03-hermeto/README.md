@@ -24,6 +24,12 @@ mvn test io.github.chains-project:maven-lockfile:5.18.4:generate \
   verification correctly refuses to accept an artifact with no checksum
   to verify against, and the whole fetch aborts.
 
+The artifact that broke Part 1 is now locked, with its checksum:
+
+```sh
+jq '.. | objects | select(.artifactId == "surefire-junit-platform")' lockfile.json
+```
+
 Note: `.mvn/extensions.xml` registers `maven-lockfile` as a core
 extension, so this command (like any `mvn` command in `01-project/`)
 needs network access to fetch it first if it isn't already cached in
