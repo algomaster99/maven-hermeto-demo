@@ -7,6 +7,9 @@ tooling, then closes it with maven-lockfile + hermeto.
 
 Reference: https://chains.proj.kth.se/maven-hermetic-builds-blind-spot.html
 
+> **Part 1 is scripted:** run `02-maven-native/record-01.sh` once beforehand
+> (needs network), then `02-maven-native/demo-01.sh` on stage.
+
 ## Folders
 
 1. **`01-project/`** — the demo Maven project (`dynamic-resolution-capture`).
