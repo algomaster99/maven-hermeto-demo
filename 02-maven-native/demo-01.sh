@@ -21,8 +21,5 @@ p "# Prefetch everything Maven can see into an empty local repo"
 p 'mvn -f ../01-project/pom.xml -Dmaven.repo.local=$(pwd)/sandbox dependency:go-offline'
 cat go-offline.log
 
-p "# Which surefire artifacts did go-offline fetch?"
-pe 'ls sandbox/org/apache/maven/surefire'
-
 p "# Now run the tests offline, using only that repo"
 pe 'mvn -o -f ../01-project/pom.xml -Dmaven.repo.local=$(pwd)/sandbox test'
