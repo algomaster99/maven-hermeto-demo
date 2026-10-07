@@ -17,6 +17,11 @@ fails immediately with an "Extension ... could not be resolved" error.
 
 ## Steps
 
+`./demo-01.sh` runs the steps below with
+[demo-magic](https://github.com/paxtonhare/demo-magic) (needs `pv`, or pass
+`-d` to skip simulated typing). It replays step 1 from a recording instead of
+hitting the network, so run `./record-01.sh` beforehand on a good connection.
+
 Run these from `02-maven-native/` (this directory), so the sandbox repo
 stays inside it — don't `cd` into `01-project` first, or `-Dmaven.repo.local`
 will resolve relative to the wrong directory.
@@ -40,14 +45,14 @@ will resolve relative to the wrong directory.
 ## Expected result: BUILD FAILURE
 
 ```
-[INFO] --- surefire:3.5.6:test (default-test) @ dynamic-resolution-capture ---
+[INFO] --- surefire:3.6.0:test (default-test) @ dynamic-resolution-capture ---
 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
-[WARNING] The POM for org.apache.maven.surefire:surefire-junit-platform:jar:3.5.6 is missing, no dependency information available
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test)
+[WARNING] The POM for org.apache.maven.surefire:surefire-junit-platform:jar:3.6.0 is missing, no dependency information available
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.6.0:test (default-test)
 on project dynamic-resolution-capture: The following artifacts could not be resolved:
-org.apache.maven.surefire:surefire-junit-platform:jar:3.5.6 (absent): Cannot access central
+org.apache.maven.surefire:surefire-junit-platform:jar:3.6.0 (absent): Cannot access central
 (https://repo.maven.apache.org/maven2) in offline mode and the artifact
-org.apache.maven.surefire:surefire-junit-platform:jar:3.5.6 has not been downloaded from it before.
+org.apache.maven.surefire:surefire-junit-platform:jar:3.6.0 has not been downloaded from it before.
 ```
 
 ## Why
