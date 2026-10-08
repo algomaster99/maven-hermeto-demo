@@ -7,8 +7,9 @@ tooling, then closes it with maven-lockfile + hermeto.
 
 Reference: https://chains.proj.kth.se/maven-hermetic-builds-blind-spot.html
 
-> **Part 1 is scripted:** run `02-maven-native/record-01.sh` once beforehand
-> (needs network), then `02-maven-native/demo-01.sh` on stage.
+> **Both parts are scripted:** run `02-maven-native/record-01.sh` and
+> `03-hermeto/record-02.sh` once beforehand (needs network), then
+> `02-maven-native/demo-01.sh` and `03-hermeto/demo-02.sh` on stage.
 
 ## Folders
 
